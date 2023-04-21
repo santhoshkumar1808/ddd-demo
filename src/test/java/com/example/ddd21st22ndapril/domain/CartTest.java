@@ -50,6 +50,16 @@ class CartTest {
         assertThat(cart.removedProducts()).hasSize(1);
     }
 
+    @Test
+    void shouldNotEquateTwoCartsHavingSameItems() {
+        var cart = new Cart();
+        var anotherCart = new Cart();
+        cart.add(anyItem());
+        anotherCart.add(anyItem());
+
+        assertThat(cart).isNotEqualTo(anotherCart);
+    }
+
     private Item anyItem() {
         return new Item(anyProduct());
     }
