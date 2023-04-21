@@ -32,6 +32,16 @@ class CartTest {
     }
 
     @Test
+    void shouldHaveNoRemovedProductsFromCartAfterAddingTheSameProductAgain() {
+        var cart = new Cart();
+        cart.add(anyItem());
+        cart.remove(anyProduct());
+        cart.add(anyItem());
+
+        assertThat(cart.removedProducts()).hasSize(0);
+    }
+
+    @Test
     void shouldReturnRemovedProductsFromCart() {
         var cart = new Cart();
         cart.add(anyItem());

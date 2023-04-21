@@ -17,4 +17,8 @@ public class Item {
     public boolean hasProduct(Product anotherProduct){
         return product.equals(anotherProduct);
     }
+
+    public Product product(){
+        return product;
+    }
 }

@@ -5,16 +5,19 @@ import java.util.List;
 
 public class Cart {
 
-    private List<Item> items;
-    private List<Product> removedProducts;
+    private final List<Item> items;
+    private final List<Product> removedProducts;
 
     public Cart(){
         this.items = new ArrayList<>();
         this.removedProducts = new ArrayList<>();
     }
 
-    public void add(Item product){
-        this.items.add(product);
+    public void add(Item item){
+        this.items.add(item);
+        if(this.removedProducts.contains(item.product())){
+            this.removedProducts.remove(item.product());
+        }
     }
 
     public void remove(Product productToBeRemoved) {
