@@ -65,6 +65,6 @@ class CartTest {
     }
 
     private Product anyProduct() {
-        return new Product("any product");
+        return new Product("any product", new Price(10.00));
     }
 }
