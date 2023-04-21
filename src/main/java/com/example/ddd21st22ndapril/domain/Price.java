@@ -12,6 +12,10 @@ public class Price {
         this.currency = Currency.getInstance("USD");
     }
 
+    public Double reduceBy(Integer number) {
+        return this.value - (this.value * number / 100);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
