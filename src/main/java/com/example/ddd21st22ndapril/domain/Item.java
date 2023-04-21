@@ -13,4 +13,8 @@ public class Item {
         this.product = product;
         this.quantity = 1;
     }
+
+    public Product product(){
+        return product;
+    }
 }
