@@ -28,7 +28,7 @@ class CartTest {
         var cart = new Cart();
         cart.add(anyItem());
 
-        assertThat(cart.removedProducts().size()).isEqualTo(0);
+        assertThat(cart.removedProducts()).hasSize(0);
     }
 
     @Test
@@ -37,7 +37,7 @@ class CartTest {
         cart.add(anyItem());
         cart.remove(anyProduct());
 
-        assertThat(cart.removedProducts().size()).isEqualTo(1);
+        assertThat(cart.removedProducts()).hasSize(1);
     }
 
     private Item anyItem() {
