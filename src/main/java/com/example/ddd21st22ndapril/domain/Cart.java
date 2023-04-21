@@ -1,4 +1,4 @@
-package com.example.ddd21st22ndapril;
+package com.example.ddd21st22ndapril.domain;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.ddd21st22ndapril;
+package com.example.ddd21st22ndapril.domain;
 
 public class Item {
     private final Product product;
