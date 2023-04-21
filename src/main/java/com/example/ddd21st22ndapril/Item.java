@@ -1,8 +1,8 @@
 package com.example.ddd21st22ndapril;
 
 public class Item {
-    private Product product;
-    private Integer quantity;
+    private final Product product;
+    private final Integer quantity;
 
     public Item(Product product, Integer quantity){
         this.product = product;
