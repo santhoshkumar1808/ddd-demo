@@ -17,17 +17,16 @@ public class Cart {
         this.items.add(product);
     }
 
-    public List<Item> items(){
-        return items;
-    }
-
     public void remove(Product productToBeRemoved) {
-        this.items.remove(items.stream().filter(item  -> item.product().
-                equals(productToBeRemoved)).findFirst().get());
+        this.items.remove(items.stream().filter(item  -> item.hasProduct(productToBeRemoved)).findFirst().get());
         this.removedProducts.add(productToBeRemoved);
     }
 
     public List<Product> removedProducts() {
         return this.removedProducts;
+    }
+
+    Integer itemsQuantity(){
+        return items.size();
     }
 }

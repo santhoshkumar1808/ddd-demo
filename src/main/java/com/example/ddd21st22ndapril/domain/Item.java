@@ -14,7 +14,7 @@ public class Item {
         this.quantity = 1;
     }
 
-    public Product product(){
-        return product;
+    public boolean hasProduct(Product anotherProduct){
+        return product.equals(anotherProduct);
     }
 }
