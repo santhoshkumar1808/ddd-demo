@@ -6,9 +6,11 @@ import java.util.List;
 public class Cart {
 
     private List<Item> items;
+    private List<Product> removedProducts;
 
     public Cart(){
         this.items = new ArrayList<>();
+        this.removedProducts = new ArrayList<>();
     }
 
     public void add(Item product){
@@ -22,5 +24,10 @@ public class Cart {
     public void remove(Product productToBeRemoved) {
         this.items.remove(items.stream().filter(item  -> item.product().
                 equals(productToBeRemoved)).findFirst().get());
+        this.removedProducts.add(productToBeRemoved);
+    }
+
+    public List<Product> removedProducts() {
+        return this.removedProducts;
     }
 }

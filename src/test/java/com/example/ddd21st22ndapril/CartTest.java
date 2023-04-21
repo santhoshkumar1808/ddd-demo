@@ -26,6 +26,23 @@ class CartTest {
         assertThat(cart.items().size()).isEqualTo(0);
     }
 
+    @Test
+    void shouldHaveNoRemovedProductsFromCart() {
+        var cart = new Cart();
+        cart.add(anyItem());
+
+        assertThat(cart.removedProducts().size()).isEqualTo(0);
+    }
+
+    @Test
+    void shouldReturnRemovedProductsFromCart() {
+        var cart = new Cart();
+        cart.add(anyItem());
+        cart.remove(anyProduct());
+
+        assertThat(cart.removedProducts().size()).isEqualTo(1);
+    }
+
     private Item anyItem() {
         return new Item(anyProduct());
     }
