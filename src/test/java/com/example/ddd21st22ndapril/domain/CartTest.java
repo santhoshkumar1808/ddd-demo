@@ -60,6 +60,21 @@ class CartTest {
         assertThat(cart).isNotEqualTo(anotherCart);
     }
 
+    @Test
+    void shouldReturnOrderWhenCartIsCheckedOut() {
+        var cart = new Cart();
+        cart.add(anyItemWithQuantity(3));
+
+        Order checkedOutOrder = cart.checkout();
+
+        assertThat(checkedOutOrder.products()).containsExactly(anyProduct(), anyProduct(), anyProduct());
+    }
+
+    private Item anyItemWithQuantity(Integer quantity) {
+        return new Item(anyProduct(), quantity);
+    }
+
+
     private Item anyItem() {
         return new Item(anyProduct());
     }
